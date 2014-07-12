@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question's</title>
+</head>
+<body>
+<% if @question_box %>
+<h3> You are looking at question # <%= @question_box.id %>.</h3>
+<ul>
+<li><h4> Author: <%= @question_box.created_by %></li> </h4>
+<li><h4> Question: <%= @question_box.question %></li> </h4>
+<li><h4> Recipient: <%= @question_box.recipient %></li> </h4>
+<li><h4> Time Stamp: <%= @question_box.created_at %></li> </h4>
+</ul>
+
+<% else %>
+<h3> No one has asked a question yet. =[ </h3>
+<% end %>
+
+</body>
+</html>
+
+<!-- My intent with this page is to function as a destination for a given question.
+The root will display all the quesion IDs for a given author.  I want the
+user to be able to click on a link, the question ID, and see the qustion and the
+intended recipient.
+
+Even though this page isn't working as intended, it's not returning the
+questions that I know exist, It still renders and doesn't throw an error because
+I've added a conditional and given it something to do in that case.
+
+That's a great lesson, I think.  Fail gracefully.  Maybe??

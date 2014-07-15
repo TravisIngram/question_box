@@ -25,13 +25,19 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-get "/" do                          # effectivily a GET / HTTP/1.0
-  @question_box = Question_box.all  # what will be returned as a response
+get "/" do                          # effectively a GET / HTTP/1.0
+  @question_boxes = Question_box.all  # what will be returned as a response
   erb :home                         # based on the home.erb
 end                                 # if home were commented out, we would send our db
                                     # which would cause a 'no string value' error
-get "/questions/new" do
-  @question_box = Question_box.new
+
+get "/questions/:id" do
+  @question_boxes = Question_box.get(params[:id])
+  erb :show
+end
+
+get "/search"  do
+  @question_boxes = Question_box.all
   erb :new_question
 end
 
@@ -48,9 +54,32 @@ post "/questions" do
   if @question_box.saved?
     redirect "/"
   else
-    erb :new_question
+    erb :home
   end
 end
+
+delete "/questions/:id" do
+  Question_box.get(params[:id]).destroy
+  redirect "/"
+end
+
+
+# get "/questions/:question" do
+#   @question_boxes = Question_box.get(params[:question])
+#   erb :show
+# end
+
+# def self.search(query)
+#   where(:author, query) -> This would return an exact match of the query
+#   # where("title like ?", "%#{query}%") 
+# end
+
+# post "/search"  do
+# #  @question_boxes = Question_box.where(:author => "%#{params[:query]}%")
+# #  @question_boxes = Question_box.all(:author.like => "%#{params[:query]}%")
+#   @question_boxes = Question_box.all(:author.like => "%#{params[:query]}%") | Event.all(:created_by.like => "%#{params[:query]}%")
+#   erb :show
+# end
 
 #  get "/questions/:author" do
 # #  @question_box = Question_box.get(requested_author)
@@ -59,5 +88,11 @@ end
 #   erb :show
 #  end
 
-
+# get "/questions/:question" do
+#  @question_box = Question_box.all
+#  @question_box = Question_box.get(question)
+#  question = params[:question]
+#  @question_box = Question_box.get(params[:question])
+#  erb :show
+# end
 

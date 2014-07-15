@@ -1,24 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Question's</title>
-</head>
-<body>
-<% if @question_box %>
-<h3> You are looking at question # <%= @question_box.id %>.</h3>
-<ul>
-<li><h4> Author: <%= @question_box.created_by %></li> </h4>
-<li><h4> Question: <%= @question_box.question %></li> </h4>
-<li><h4> Recipient: <%= @question_box.recipient %></li> </h4>
-<li><h4> Time Stamp: <%= @question_box.created_at %></li> </h4>
-</ul>
 
-<% else %>
-<h3> No one has asked a question yet. =[ </h3>
-<% end %>
+<br />
+<br />
+<br />
+<div class="content">
+  <div class="det-form">
+  <h2>Here are the details of your question!</h2>
+  <br />
+  <br />
+    <% if @question_boxes %>
+  <ul>
+    <h1> The ID: <%= @question_boxes.id %></h1>
+    <br/>
+    <h1> The Author: <%= @question_boxes.author %></h1>
+    <br/>
+    <h1> The Time: <%= @question_boxes.created_at %></h1>
+    <br/>
+    <h1> The Question: <%= @question_boxes.question %></h1>
+  </ul>
+      <% else %>
+    <h2> No one has asked a question yet. =[ </h2>
+  <% end %>
+        <form method="POST" action="/questions/<%= @question_boxes.id %>">
+          <input type="hidden" name="_method" value="delete" />
+          </p>
+          <p class="submit"><input type="submit" value="Delete"></p>
+        </form>
 
-</body>
-</html>
+        <form method="POST" action="/questions/<%= @question_boxes.id %>">
+          <input type="hidden" name="_method" value="update" />
+          </p>
+          <p class="submit"><input type="submit" value="Update"></p>
+        </form>
+    </div>
+</div>
+
+<br />
+<br />
+
+
 
 <!-- My intent with this page is to function as a destination for a given question.
 The root will display all the quesion IDs for a given author.  I want the

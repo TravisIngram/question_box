@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Questions?</title>
-</head>
-<body>
 
-<h2>You can view or add your questions here.</h2>
+<div class="container">
+  <div class="qb-form">
+    <h2>Record Your Question</h2>
+    <br />
+    <form method="POST" action="/questions">
+      <p><input type="text" name="question_box[question]" value="" placeholder="Take the attitude of a student..." /></p>
+      </p>
+      <p class="submit"><input type="submit" value="Submit"></p>
+    </form>
+  </div>
+</div>
 
-<h2>Select the question you'd like to view from the list below.</h2>
+<br />
 
-<ul> 
-<% @question_box.each do |question_box| %>
-<h4>Question Number: <a href="/questions/<%= question_box.id %>"><%= question_box.id %></a>, For <%= question_box.recipient %></h4>
- <!-- <li>Question: <%=question_box.question%></li>
-  <li>Question Recipient: <%=question_box.recipient%></li>
-  <li>Question ID: <%=question_box.id%></li> -->
-<% end %>
-</ul>
-
-<a href="/questions/new">Add Your Questions Here!</a>
-
-</body>
-</html>
+<div class="content">
+  <h2>Recent Questions</h2>
+  <br />
+  <br />
+  <ul>
+    <% @question_boxes.each do |question_box| %>
+      <% if question_box.question != "" && question_box.id >= 8 %>
+      <h1> <a href="/questions/<%= question_box.id %>"><%= question_box.question %></h1> 
+      <br />
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,264 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway:400');
+
+body {
+  background-color: #f4f4f4;
+  width: 100%;
+  font-weight: 200;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: #123243;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1 h2 h3 h4 {
+
+}
+
+/*Nav bar*/
+.nav {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 50em;
+  background-color: #ffffff;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-family: ‘Raleway’, helvetica, verdana, trebuchet, sans-serif;
+  border-bottom: .1em solid #f4aaaa;
+}
+
+.nav h1 {
+  display: inline-block;
+  float: left;
+  font-size: 1.5em;
+  margin-left: 5%;
+}
+
+.links {
+  position: relative;
+  margin-right: 5%;
+}
+
+.links a {
+  display: inline-block;
+  float: right;
+  margin-left: 3%;
+  font-size: 1em;
+}
+
+.links a:hover {
+  color: rgb(244, 170, 170);
+}
+
+/*content section*/
+.content {
+  display:inline-block;
+  top: 6em;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: ‘Raleway’, helvetica, verdana, trebuchet, sans-serif;
+}
+
+.content h1 {
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+}
+
+.content a {
+}
+
+.content a:hover {
+  color: rgb(244, 170, 170);
+}
+
+.content ul h1 {
+  font-size: 20px;
+  color: #555;
+  text-align: left;
+}
+
+/* Question Box Form */
+.container {
+  margin: 50px auto;
+  width: 640px;
+}
+
+.qb-form {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+}
+
+.qb-form p.submit {
+  text-align: center;
+}
+
+.qb-form:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.qb-form h2 {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-family: ‘Raleway’, helvetica, verdana, trebuchet, sans-serif;
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #f3f3f3;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+ 
+.qb-form p {
+  margin: 20px 0 0;
+}
+ 
+.qb-form p:first-child {
+  margin-top: 0;
+}
+ 
+.qb-form input[type=text], .qb-form input[type=password] {
+  width: 278px;
+}
+
+/* Deatils Form */
+.det-form {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 50%;
+}
+
+.det-form p.update {
+  text-align: center;
+}
+
+.det-form p.delete {
+  text-align: center;
+}
+
+.det-form:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.det-form h2 {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-family: ‘Raleway’, helvetica, verdana, trebuchet, sans-serif;
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #f3f3f3;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+ 
+.det-form p {
+  margin: 20px 0 0;
+}
+ 
+.det-form p:first-child {
+  margin-top: 0;
+}
+ 
+.det-form input[type=text], .det-form input[type=password] {
+  width: 278px;
+}
+
+input[type=submit] {
+  padding: 0 18px;
+  height: 29px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  background: #f4aaaa;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+/*  background-image: -webkit-linear-gradient(top, #edf5f8, #f4aaaa);
+  background-image: -moz-linear-gradient(top, #edf5f8, #f4aaaa);
+  background-image: -o-linear-gradient(top, #edf5f8, #f4aaaa);
+  background-image: linear-gradient(to bottom, #edf5f8, #f4aaaa);
+  -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15); */
+}
+
+input[type=submit]:active {
+  background: #f4aaaa;
+  border-color: #9eb9c2 #b3c0c8 #b4ccce;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/*.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}*/
+
+textarea,
+input[type="text"],
+input[type="email"] {
+  width:40em;
+}
+input,textarea { 
+  padding:1em; 
+  border:1px solid #ddd; 
+  border-radius:1em; 
+  outline:none; 
+  margin-top:0.2em; } /* Last one for Webkit */
+textarea { 
+  resize:none; /* For Webkit */ }
+* { font-family:'Open Sans',sans-serif; font-weight:300; }

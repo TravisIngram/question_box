@@ -25,18 +25,18 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-get "/" do                          # effectively a GET / HTTP/1.0
+get "/" do                            # effectively a GET / HTTP/1.0
   @question_boxes = Question_box.all  # what will be returned as a response
-  erb :home                         # based on the home.erb
-end                                 # if home were commented out, we would send our db
-                                    # which would cause a 'no string value' error
+  erb :home                           # based on the home.erb
+end                                   # if home were commented out, we would send our db
+                                      # which would cause a 'no string value' error
 
 get "/questions/:id" do
   @question_boxes = Question_box.get(params[:id])
   erb :show
 end
 
-get "/search"  do
+get "/search"  do                     # eventually destination for a search option.
   @question_boxes = Question_box.all
   erb :new_question
 end
@@ -58,11 +58,13 @@ post "/questions" do
   end
 end
 
-delete "/questions/:id" do
-  Question_box.get(params[:id]).destroy
-  redirect "/"
-end
+delete "/questions/:id" do                  # basic delete destination
+  Question_box.get(params[:id]).destroy     
+  redirect "/"                              # I need to add a conditional on failure
+end                                         # to delete, not exactly clear how.
 
+
+# These are all scratch, things I tried or saw and used as models.
 
 # get "/questions/:question" do
 #   @question_boxes = Question_box.get(params[:question])

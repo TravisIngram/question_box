@@ -17,10 +17,6 @@ p {
   margin-bottom: 1em;
 }
 
-h1 h2 h3 h4 {
-
-}
-
 /*Nav bar*/
 .nav {
   position: fixed;
@@ -240,14 +236,6 @@ input[type=submit]:active {
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-/*.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-}*/
-
 textarea,
 input[type="text"],
 input[type="email"] {
@@ -262,3 +250,10 @@ input,textarea {
 textarea { 
   resize:none; /* For Webkit */ }
 * { font-family:'Open Sans',sans-serif; font-weight:300; }
+
+
+/* This is a tangled mess of random CSS that was created from scratch and
+grabbed from various tutorials and other places.  It needs to be cleaned up.
+
+I at least know what it's doing, how the classes work and even if I'm not 100%
+on all the various individual attributes. */

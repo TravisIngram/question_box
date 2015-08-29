@@ -25,22 +25,32 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
+# Question box, recent qeustions
 get "/" do                            # effectively a GET / HTTP/1.0
   @question_boxes = Question_box.all  # what will be returned as a response
   erb :home                           # based on the home.erb
 end                                   # if home were commented out, we would send our db
                                       # which would cause a 'no string value' error
-
+# Display details of question
 get "/questions/:id" do
   @question_boxes = Question_box.get(params[:id])
-  erb :show
+  erb :edit
 end
 
+# Search for...something?  Author, created date?
 get "/search"  do                     # eventually destination for a search option.
   @question_boxes = Question_box.all
   erb :new_question
 end
 
+# Update Question
+get "/questions/:id/edit" do
+  @question_boxes = Question_box.all
+#  @question_boxes = Question_box.get(params[:id])
+  erb :edit
+end
+
+# Create new question
 post "/questions" do
   question_box_attributes = params["question_box"]
   # We'll get the starting attributes for this question from `params`
@@ -58,10 +68,27 @@ post "/questions" do
   end
 end
 
-delete "/questions/:id" do                  # basic delete destination
-  Question_box.get(params[:id]).destroy     
-  redirect "/"                              # I need to add a conditional on failure
-end                                         # to delete, not exactly clear how.
+# Update Questions
+put "/questions/:id" do
+  @question_boxes = Question_box.all
+  @question_boxes = (params[:id])
+  @question_boxes.author = (params[:author])
+#  question_box.created_at = (params[:created_at])
+#  question_box.question = (params[:question])
+  
+
+  if question_box.save
+    redirect '/questions/'+@question_boxes.id.to_s
+  else
+    redirect erb :new_question
+  end
+end
+
+# Delete Questions
+# delete "/questions/:id" do                  # basic delete destination
+#   Question_box.get(params[:id]).destroy     
+#   redirect "/"                              # I need to add a conditional on failure
+# end                                         # to delete, not exactly clear how.
 
 
 # These are all scratch, things I tried or saw and used as models.

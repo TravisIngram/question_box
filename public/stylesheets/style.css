@@ -196,6 +196,13 @@ p {
   box-shadow: 0 1px whitesmoke;
 }
  
+.det-form h1 {
+  font-family: ‘Raleway’, helvetica, verdana, trebuchet, sans-serif;
+  font-size: 20px;
+  color: #555;
+  text-align: left;
+}
+
 .det-form p {
   margin: 20px 0 0;
 }
@@ -204,8 +211,13 @@ p {
   margin-top: 0;
 }
  
-.det-form input[type=text], .det-form input[type=password] {
-  width: 278px;
+.det-form input[type=text] {
+  text-align: center;
+  width: 200px;
+}
+
+.det-form input[type=password] {
+  width: 200px;
 }
 
 input[type=submit] {

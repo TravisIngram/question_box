@@ -1,0 +1,27 @@
+<br />
+<br />
+<br />
+<div class="content">
+  <div class="det-form">
+  <h2>Here are the details of your question!</h2>
+        <form method="POST" action="/questions/<%= @question_boxes.id %>">
+          <input type="hidden" name="_method" value="put" />
+          <h1>ID:</h1> <input type"text" name="question_box[id]" id="id" value="<%= @question_boxes.id %>">
+          <h1>Author:</h1> <input type"text" name="question_box[author]" id="author" value="">
+          </p>
+          <p class="submit"><input type="submit" value="Update"></p>
+        </form>
+    </div>
+</div>
+
+<br />
+<br />
+
+
+
+<!-- My intent with this page is to function as a destination for EDITING a given
+question, showing the details and offering up the ability to delete or update the
+information.
+
+There are some styling issues, mainly with the addition of the second button. I'd
+perfer they were centered horizontally.
